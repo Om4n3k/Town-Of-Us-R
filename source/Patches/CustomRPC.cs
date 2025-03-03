@@ -98,6 +98,8 @@ namespace TownOfUs
         CheckMurder,
 
         SubmergedFixOxygen,
+        Rewind,
+        RewindRevive,
 
         ContentAddition
     }

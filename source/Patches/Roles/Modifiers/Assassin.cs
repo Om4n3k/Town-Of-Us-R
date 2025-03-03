@@ -57,6 +57,7 @@ namespace TownOfUs.Roles.Modifiers
             if (CustomGameOptions.JailorOn > 0) ColorMapping.Add("Jailor", Colors.Jailor);
             if (CustomGameOptions.LookoutOn > 0) ColorMapping.Add("Lookout", Colors.Lookout);
             if (CustomGameOptions.DeputyOn > 0) ColorMapping.Add("Deputy", Colors.Deputy);
+            if (CustomGameOptions.TimeLordOn > 0) ColorMapping.Add("TimeLord", Colors.Timelord);   
 
             // Add Neutral roles if enabled
             if (CustomGameOptions.AssassinGuessNeutralBenign)

@@ -25,6 +25,7 @@ namespace TownOfUs.CustomOption
         public static CustomNumberOption SheriffOn;
         public static CustomNumberOption VeteranOn;
         public static CustomNumberOption VigilanteOn;
+        public static CustomNumberOption TimeLordOn;
 
         public static CustomHeaderOption CrewProtectiveRoles;
         public static CustomNumberOption AltruistOn;
@@ -189,6 +190,13 @@ namespace TownOfUs.CustomOption
         public static CustomToggleOption AnonymousFootPrint;
         public static CustomToggleOption VentFootprintVisible;
 
+        public static CustomHeaderOption TimeLord;
+        public static CustomToggleOption RewindRevive;
+        public static CustomNumberOption RewindDuration;
+        public static CustomNumberOption RewindCooldown;
+        public static CustomNumberOption RewindMaxUses;
+        public static CustomToggleOption TimeLordVitals;
+        
         public static CustomHeaderOption Medic;
         public static CustomStringOption ShowShielded;
         public static CustomStringOption WhoGetsNotification;
@@ -559,6 +567,8 @@ namespace TownOfUs.CustomOption
                 PercentFormat);
             VigilanteOn = new CustomNumberOption(num++, MultiMenu.crewmate, "<color=#FFFF99FF>Vigilante</color>", 0f, 0f, 100f, 10f,
                 PercentFormat);
+            TimeLordOn = new CustomNumberOption(num++, MultiMenu.crewmate, "<color=#FF7C7C7C>Timelord</color>", 0f, 0f,
+                100f, 10f, PercentFormat);
 
             CrewProtectiveRoles = new CustomHeaderOption(num++, MultiMenu.crewmate, "Crewmate Protective Roles");
             AltruistOn = new CustomNumberOption(num++, MultiMenu.crewmate, "<color=#660000FF>Altruist</color>", 0f, 0f, 100f, 10f,
@@ -1043,6 +1053,13 @@ namespace TownOfUs.CustomOption
             VigilanteGuessNeutralKilling = new CustomToggleOption(num++, MultiMenu.crewmate, "Vigilante Can Guess Neutral Killing Roles", false);
             VigilanteGuessModifiers = new CustomToggleOption(num++, MultiMenu.crewmate, "Vigilante Can Guess Impostor Modifiers", false);
             VigilanteGuessLovers = new CustomToggleOption(num++, MultiMenu.crewmate, "Vigilante Can Guess Lovers", false);
+            
+            TimeLord = new CustomHeaderOption(num++, MultiMenu.crewmate, "<color=#FF7C7C7C>Timelord</color>");
+            TimeLordVitals = new CustomToggleOption(num++, MultiMenu.crewmate, "Time Lord Vitals", false);
+            RewindRevive = new CustomToggleOption(num++, MultiMenu.crewmate, "Does rewind revive dead crewmates?");
+            RewindDuration = new CustomNumberOption(num++, MultiMenu.crewmate, "How many seconds does timelord rewind?", 10f, 1f, 20f, 1f, CooldownFormat);
+            RewindCooldown = new CustomNumberOption(num++, MultiMenu.crewmate, "Rewind cooldown time", 10f, 1f, 20f, 1f, CooldownFormat);
+            RewindMaxUses = new CustomNumberOption(num++, MultiMenu.crewmate, "Rewind max uses", 5f, 1f, 10f, 1f);
 
             Altruist = new CustomHeaderOption(num++, MultiMenu.crewmate, "<color=#660000FF>Altruist</color>");
             ReviveDuration =

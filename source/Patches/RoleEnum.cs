@@ -46,6 +46,7 @@ namespace TownOfUs
         SoulCollector,
         Lookout,
         Deputy,
+        TimeLord,
 
         Miner,
         Swooper,
