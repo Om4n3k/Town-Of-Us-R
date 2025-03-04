@@ -1489,9 +1489,9 @@ namespace TownOfUs
                         break;
                     case CustomRPC.Rewind:
                         readByte = reader.ReadByte();
-                        var TimeLordPlayer = Utils.PlayerById(readByte);
-                        var TimeLordRole = Role.GetRole<TimeLord>(TimeLordPlayer);
-                        StartStop.StartRewind(TimeLordRole);
+                        var timeLordPlayer = Utils.PlayerById(readByte);
+                        var timeLordRole = Role.GetRole<TimeLord>(timeLordPlayer);
+                        StartStop.StartRewind(timeLordRole);
                         break;
                     case CustomRPC.RewindRevive:
                         readByte = reader.ReadByte();

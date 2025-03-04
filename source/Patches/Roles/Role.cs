@@ -700,6 +700,7 @@ namespace TownOfUs.Roles
             [HarmonyPatch(typeof(LogicGameFlowNormal), nameof(LogicGameFlowNormal.CheckEndCriteria))]
             public static bool Prefix(LogicGameFlowNormal __instance)
             {
+                if (TownOfUs.DisableWinCondition.Value) return false;
                 if (GameOptionsManager.Instance.CurrentGameOptions.GameMode == GameModes.HideNSeek) return true;
                 if (!AmongUsClient.Instance.AmHost) return false;
                 if (ShipStatus.Instance.Systems != null)

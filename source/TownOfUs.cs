@@ -126,6 +126,8 @@ namespace TownOfUs
         private Harmony _harmony;
 
         public static ConfigEntry<bool> DeadSeeGhosts { get; set; }
+        public static ConfigEntry<bool> MinPlayersUnlock { get; set; }
+        public static ConfigEntry<bool> DisableWinCondition { get; set; }
 
         public static string RuntimeLocation;
 
@@ -241,12 +243,19 @@ namespace TownOfUs
                         File.Move(file, newFile);
                     }
                 }
-                catch { }
+                catch
+                {
+                }
             }
 
             // RegisterInIl2CppAttribute.Register();
 
-            DeadSeeGhosts = Config.Bind("Settings", "Dead See Other Ghosts", true, "Whether you see other dead player's ghosts while your dead");
+            DeadSeeGhosts = Config.Bind("Settings", "Dead See Other Ghosts", true,
+                "Whether you see other dead player's ghosts while your dead");
+            MinPlayersUnlock = Config.Bind("Debug", "Unlock minimum players count", false,
+                "Whether you can start a game with less then 4 platyers");
+            DisableWinCondition = Config.Bind("Debug", "Disables game ending", false,
+                "Whether you want to disable the game ending");
 
             _harmony.PatchAll();
             SubmergedCompatibility.Initialize();
@@ -273,7 +282,7 @@ namespace TownOfUs
         public static void LoadImage(Texture2D tex, byte[] data, bool markNonReadable)
         {
             _iCallLoadImage ??= IL2CPP.ResolveICall<DLoadImage>("UnityEngine.ImageConversion::LoadImage");
-            var il2CPPArray = (Il2CppStructArray<byte>) data;
+            var il2CPPArray = (Il2CppStructArray<byte>)data;
             _iCallLoadImage.Invoke(tex.Pointer, il2CPPArray.Pointer, markNonReadable);
         }
 

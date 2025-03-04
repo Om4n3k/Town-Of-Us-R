@@ -48,7 +48,8 @@ namespace TownOfUs.Patches
         {
             if (__instance == null || !AmongUsClient.Instance.AmHost) return;
 
-            __instance.MinPlayers = 4;
+            if (!TownOfUs.MinPlayersUnlock.Value)
+                __instance.MinPlayers = 4;
 
             CancelStartButton.gameObject.SetActive(__instance.startState is GameStartManager.StartingStates.Countdown);
 
