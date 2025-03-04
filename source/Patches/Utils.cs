@@ -1525,7 +1525,7 @@ namespace TownOfUs
             {
                 var escapist = Role.GetRole<Escapist>(PlayerControl.LocalPlayer);
                 escapist.LastEscape = DateTime.UtcNow;
-                escapist.EscapeButton.graphic.sprite = TownOfUs.MarkSprite;
+                escapist.EscapeButton.graphic.sprite = TownOfUs.Sprites[TownOfUs.SpriteType.Mark];
             }
             if (PlayerControl.LocalPlayer.Is(RoleEnum.Blackmailer))
             {
@@ -1559,7 +1559,7 @@ namespace TownOfUs
             if (PlayerControl.LocalPlayer.Is(RoleEnum.Bomber))
             {
                 var bomber = Role.GetRole<Bomber>(PlayerControl.LocalPlayer);
-                bomber.PlantButton.graphic.sprite = TownOfUs.PlantSprite;
+                bomber.PlantButton.graphic.sprite = TownOfUs.Sprites[TownOfUs.SpriteType.Plant];
                 bomber.Bomb.ClearBomb();
             }
             if (PlayerControl.LocalPlayer.Is(RoleEnum.Grenadier))
@@ -1576,7 +1576,7 @@ namespace TownOfUs
             {
                 var morphling = Role.GetRole<Morphling>(PlayerControl.LocalPlayer);
                 morphling.LastMorphed = DateTime.UtcNow;
-                morphling.MorphButton.graphic.sprite = TownOfUs.SampleSprite;
+                morphling.MorphButton.graphic.sprite = TownOfUs.Sprites[TownOfUs.SpriteType.Sample];
                 morphling.SampledPlayer = null;
             }
             if (PlayerControl.LocalPlayer.Is(RoleEnum.Swooper))
@@ -1593,7 +1593,7 @@ namespace TownOfUs
             {
                 var undertaker = Role.GetRole<Undertaker>(PlayerControl.LocalPlayer);
                 undertaker.LastDragged = DateTime.UtcNow;
-                undertaker.DragDropButton.graphic.sprite = TownOfUs.DragSprite;
+                undertaker.DragDropButton.graphic.sprite = TownOfUs.Sprites[TownOfUs.SpriteType.Drag];
                 undertaker.CurrentlyDragging = null;
             }
             #endregion

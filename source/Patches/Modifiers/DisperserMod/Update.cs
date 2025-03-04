@@ -8,7 +8,7 @@ namespace TownOfUs.Modifiers.DisperserMod
     [HarmonyPatch(typeof(HudManager), nameof(HudManager.Update))]
     public class Update
     {
-        public static Sprite DisperseButton => TownOfUs.DisperseSprite;
+        public static Sprite DisperseButton => TownOfUs.Sprites[TownOfUs.SpriteType.Disperse];
 
         public static void Postfix(HudManager __instance)
         {

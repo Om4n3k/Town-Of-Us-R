@@ -10,7 +10,7 @@ namespace TownOfUs.CrewmateRoles.HunterMod
     [HarmonyPatch(typeof(HudManager), nameof(HudManager.Update))]
     public static class HudManagerUpdate
     {
-        public static Sprite StalkSprite => TownOfUs.StalkSprite;
+        public static Sprite StalkSprite => TownOfUs.Sprites[TownOfUs.SpriteType.Stalk];
 
         public static void Postfix(HudManager __instance)
         {

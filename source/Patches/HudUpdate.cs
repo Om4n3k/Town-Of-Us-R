@@ -49,8 +49,8 @@ namespace TownOfUs.Patches
                 && GameOptionsManager.Instance.CurrentGameOptions.GameMode == GameModes.Normal && HauntMenuMinigame.Instance == null);
             ZoomButton.transform.localPosition = Pos;
             ZoomButton.transform.Find("Background").localPosition = Vector3.zero;
-            ZoomButton.transform.Find("Inactive").GetComponent<SpriteRenderer>().sprite = Zooming ? TownOfUs.ZoomPlusButton : TownOfUs.ZoomMinusButton;
-            ZoomButton.transform.Find("Active").GetComponent<SpriteRenderer>().sprite = Zooming ? TownOfUs.ZoomPlusActiveButton : TownOfUs.ZoomMinusActiveButton;
+            ZoomButton.transform.Find("Inactive").GetComponent<SpriteRenderer>().sprite = Zooming ? TownOfUs.Sprites[TownOfUs.SpriteType.Plus] : TownOfUs.Sprites[TownOfUs.SpriteType.Minus];
+            ZoomButton.transform.Find("Active").GetComponent<SpriteRenderer>().sprite = Zooming ? TownOfUs.Sprites[TownOfUs.SpriteType.PlusActive] : TownOfUs.Sprites[TownOfUs.SpriteType.MinusActive];
         }
 
         public static void Zoom()

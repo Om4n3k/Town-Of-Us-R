@@ -10,7 +10,7 @@ namespace TownOfUs.CrewmateRoles.HaunterMod
     [HarmonyPatch(typeof(PlayerControl), nameof(PlayerControl.CompleteTask))]
     public class CompleteTask
     {
-        public static Sprite Sprite => TownOfUs.Arrow;
+        public static Sprite Sprite => TownOfUs.Sprites[TownOfUs.SpriteType.Arrow];
         public static void Postfix(PlayerControl __instance)
         {
             if (!__instance.Is(RoleEnum.Haunter)) return;

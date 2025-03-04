@@ -11,7 +11,7 @@ namespace TownOfUs.NeutralRoles.AmnesiacMod
     [HarmonyPatch(typeof(HudManager), nameof(HudManager.Update))]
     public class HudManagerUpdate
     {
-        public static Sprite Arrow => TownOfUs.Arrow;
+        public static Sprite Arrow => TownOfUs.Sprites[TownOfUs.SpriteType.Arrow];
 
         public static void Postfix(HudManager __instance)
         {

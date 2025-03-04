@@ -29,7 +29,7 @@ namespace TownOfUs.NeutralRoles.SoulCollectorMod
             soul.transform.position = location;
             soul.layer = LayerMask.NameToLayer("Players");
             SpriteRenderer render = soul.AddComponent<SpriteRenderer>();
-            render.sprite = TownOfUs.SoulSprite;
+            render.sprite = TownOfUs.Sprites[TownOfUs.SpriteType.Soul];
             Vector3 scale = render.transform.localScale;
             scale.x *= 0.5f;
             scale.y *= 0.5f;

@@ -7,8 +7,8 @@ namespace TownOfUs.ImpostorRoles.EscapistMod
     [HarmonyPatch(typeof(HudManager), nameof(HudManager.Update))]
     public class HudManagerUpdate
     {
-        public static Sprite MarkSprite => TownOfUs.MarkSprite;
-        public static Sprite EscapeSprite => TownOfUs.EscapeSprite;
+        public static Sprite MarkSprite => TownOfUs.Sprites[TownOfUs.SpriteType.Mark];
+        public static Sprite EscapeSprite => TownOfUs.Sprites[TownOfUs.SpriteType.Recall];
 
 
         public static void Postfix(HudManager __instance)

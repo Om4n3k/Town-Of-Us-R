@@ -10,7 +10,7 @@ namespace TownOfUs.CrewmateRoles.PoliticianMod
 {
     public class AddRevealButtonPolitician
     {
-        public static Sprite RevealSprite => TownOfUs.RevealSprite;
+        public static Sprite RevealSprite => TownOfUs.Sprites[TownOfUs.SpriteType.Reveal];
 
         public static void GenButton(Politician role, int index)
         {

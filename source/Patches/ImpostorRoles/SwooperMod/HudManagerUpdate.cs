@@ -7,7 +7,7 @@ namespace TownOfUs.ImpostorRoles.SwooperMod
     [HarmonyPatch(typeof(HudManager), nameof(HudManager.Update))]
     public class HudManagerUpdate
     {
-        public static Sprite SwoopSprite => TownOfUs.SwoopSprite;
+        public static Sprite SwoopSprite => TownOfUs.Sprites[TownOfUs.SpriteType.Swoop];
 
         public static void Postfix(HudManager __instance)
         {

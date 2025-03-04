@@ -11,7 +11,7 @@ namespace TownOfUs.ImpostorRoles.BlackmailerMod
     [HarmonyPatch(typeof(HudManager), nameof(HudManager.Update))]
     public class HudManagerUpdate
     {
-        public static Sprite Blackmail => TownOfUs.BlackmailSprite;
+        public static Sprite Blackmail => TownOfUs.Sprites[TownOfUs.SpriteType.Blackmail];
 
         public static void Postfix(HudManager __instance)
         {

@@ -8,7 +8,7 @@ namespace TownOfUs.ImpostorRoles.GrenadierMod
     [HarmonyPatch(typeof(HudManager), nameof(HudManager.Update))]
     public class HudManagerUpdate
     {
-        public static Sprite FlashSprite => TownOfUs.FlashSprite;
+        public static Sprite FlashSprite => TownOfUs.Sprites[TownOfUs.SpriteType.Flash];
 
         public static void Postfix(HudManager __instance)
         {

@@ -19,31 +19,31 @@ namespace TownOfUs
     [HarmonyPatch(typeof(HudManager), nameof(HudManager.Update))]
     public class KillButtonSprite
     {
-        private static Sprite Fix => TownOfUs.EngineerFix;
-        private static Sprite Medic => TownOfUs.MedicSprite;
-        private static Sprite Seer => TownOfUs.SeerSprite;
-        private static Sprite Douse => TownOfUs.DouseSprite;
-        private static Sprite Revive => TownOfUs.ReviveSprite;
-        private static Sprite Alert => TownOfUs.AlertSprite;
-        private static Sprite Remember => TownOfUs.RememberSprite;
-        private static Sprite Track => TownOfUs.TrackSprite;
-        private static Sprite Transport => TownOfUs.TransportSprite;
-        private static Sprite Mediate => TownOfUs.MediateSprite;
-        private static Sprite Vest => TownOfUs.VestSprite;
-        private static Sprite Protect => TownOfUs.ProtectSprite;
-        private static Sprite Infect => TownOfUs.InfectSprite;
-        private static Sprite Trap => TownOfUs.TrapSprite;
-        private static Sprite Inspect => TownOfUs.InspectSprite;
-        private static Sprite Observe => TownOfUs.ObserveSprite;
-        private static Sprite Bite => TownOfUs.BiteSprite;
-        private static Sprite Confess => TownOfUs.ConfessSprite;
-        private static Sprite Campaign => TownOfUs.CampaignSprite;
-        private static Sprite Fortify => TownOfUs.FortifySprite;
-        private static Sprite Jail => TownOfUs.JailSprite;
-        private static Sprite Collect => TownOfUs.CollectSprite;
-        private static Sprite Watch => TownOfUs.WatchSprite;
-        private static Sprite Camp => TownOfUs.CampSprite;
-        private static Sprite Rewind => TownOfUs.RewindSprite;
+        private static Sprite Fix => TownOfUs.Sprites[TownOfUs.SpriteType.Engineer];
+        private static Sprite Medic => TownOfUs.Sprites[TownOfUs.SpriteType.Medic];
+        private static Sprite Seer => TownOfUs.Sprites[TownOfUs.SpriteType.Seer];
+        private static Sprite Douse => TownOfUs.Sprites[TownOfUs.SpriteType.Douse];
+        private static Sprite Revive => TownOfUs.Sprites[TownOfUs.SpriteType.Revive];
+        private static Sprite Alert => TownOfUs.Sprites[TownOfUs.SpriteType.Alert];
+        private static Sprite Remember => TownOfUs.Sprites[TownOfUs.SpriteType.Remember];
+        private static Sprite Track => TownOfUs.Sprites[TownOfUs.SpriteType.Track];
+        private static Sprite Transport => TownOfUs.Sprites[TownOfUs.SpriteType.Transport];
+        private static Sprite Mediate => TownOfUs.Sprites[TownOfUs.SpriteType.Mediate];
+        private static Sprite Vest => TownOfUs.Sprites[TownOfUs.SpriteType.Vest];
+        private static Sprite Protect => TownOfUs.Sprites[TownOfUs.SpriteType.Protect];
+        private static Sprite Infect => TownOfUs.Sprites[TownOfUs.SpriteType.Infect];
+        private static Sprite Trap => TownOfUs.Sprites[TownOfUs.SpriteType.Trap];
+        private static Sprite Inspect => TownOfUs.Sprites[TownOfUs.SpriteType.Inspect];
+        private static Sprite Observe => TownOfUs.Sprites[TownOfUs.SpriteType.Observe];
+        private static Sprite Bite => TownOfUs.Sprites[TownOfUs.SpriteType.Bite];
+        private static Sprite Confess => TownOfUs.Sprites[TownOfUs.SpriteType.Confess];
+        private static Sprite Campaign => TownOfUs.Sprites[TownOfUs.SpriteType.Campaign];
+        private static Sprite Fortify => TownOfUs.Sprites[TownOfUs.SpriteType.Fortify];
+        private static Sprite Jail => TownOfUs.Sprites[TownOfUs.SpriteType.Jail];
+        private static Sprite Collect => TownOfUs.Sprites[TownOfUs.SpriteType.Collect];
+        private static Sprite Watch => TownOfUs.Sprites[TownOfUs.SpriteType.Watch];
+        private static Sprite Camp => TownOfUs.Sprites[TownOfUs.SpriteType.Camp];
+        private static Sprite Rewind => TownOfUs.Sprites[TownOfUs.SpriteType.Rewind];
 
         private static Sprite Kill;
 

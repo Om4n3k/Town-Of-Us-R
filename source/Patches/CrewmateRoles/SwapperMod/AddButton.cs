@@ -10,8 +10,8 @@ namespace TownOfUs.CrewmateRoles.SwapperMod
     public class AddButton
     {
         private static int _mostRecentId;
-        private static Sprite ActiveSprite => TownOfUs.SwapperSwitch;
-        public static Sprite DisabledSprite => TownOfUs.SwapperSwitchDisabled;
+        private static Sprite ActiveSprite => TownOfUs.Sprites[TownOfUs.SpriteType.SwapperSwitch];
+        public static Sprite DisabledSprite => TownOfUs.Sprites[TownOfUs.SpriteType.SwapperSwitchDisabled];
 
         private static bool IsExempt(PlayerVoteArea voteArea)
         {

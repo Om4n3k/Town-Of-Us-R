@@ -9,7 +9,7 @@ namespace TownOfUs.ImpostorRoles.HypnotistMod
 {
     public class AddHysteriaButton
     {
-        public static Sprite HysteriaSprite => TownOfUs.HysteriaSprite;
+        public static Sprite HysteriaSprite => TownOfUs.Sprites[TownOfUs.SpriteType.Hysteria];
 
         public static void GenButton(Hypnotist role, int index)
         {

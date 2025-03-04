@@ -21,7 +21,7 @@ namespace TownOfUs.CrewmateRoles.DeputyMod
 {
     public class AddButtonDeputy
     {
-        private static Sprite ShootSprite => TownOfUs.ShootSprite;
+        private static Sprite ShootSprite => TownOfUs.Sprites[TownOfUs.SpriteType.Shoot];
 
         private static bool IsExempt(PlayerVoteArea voteArea)
         {
@@ -311,7 +311,7 @@ namespace TownOfUs.CrewmateRoles.DeputyMod
                     var button = swapper.Buttons[index];
                     if (button != null)
                     {
-                        if (button.GetComponent<SpriteRenderer>().sprite == TownOfUs.SwapperSwitch)
+                        if (button.GetComponent<SpriteRenderer>().sprite == TownOfUs.Sprites[TownOfUs.SpriteType.SwapperSwitch])
                         {
                             swapper.ListOfActives[index] = (swapper.ListOfActives[index].Item1, false);
                             if (SwapVotes.Swap1 == voteArea) SwapVotes.Swap1 = null;

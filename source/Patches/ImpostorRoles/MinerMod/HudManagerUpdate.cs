@@ -8,8 +8,7 @@ namespace TownOfUs.ImpostorRoles.MinerMod
     [HarmonyPatch(typeof(HudManager), nameof(HudManager.Update))]
     public class HudManagerUpdate
     {
-        public static Sprite MineSprite => TownOfUs.MineSprite;
-
+        public static Sprite MineSprite => TownOfUs.Sprites[TownOfUs.SpriteType.Mine];
         public static void Postfix(HudManager __instance)
         {
             if (PlayerControl.AllPlayerControls.Count <= 1) return;

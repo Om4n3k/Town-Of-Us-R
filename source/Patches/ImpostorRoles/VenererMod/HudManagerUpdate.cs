@@ -7,10 +7,10 @@ namespace TownOfUs.ImpostorRoles.VenererMod
     [HarmonyPatch(typeof(HudManager), nameof(HudManager.Update))]
     public class HudManagerUpdate
     {
-        public static Sprite NoneSprite => TownOfUs.NoAbilitySprite;
-        public static Sprite CamoSprite => TownOfUs.CamouflageSprite;
-        public static Sprite CamoSprintSprite => TownOfUs.CamoSprintSprite;
-        public static Sprite CamoSprintFreezeSprite => TownOfUs.CamoSprintFreezeSprite;
+        public static Sprite NoneSprite => TownOfUs.Sprites[TownOfUs.SpriteType.NoAbility];
+        public static Sprite CamoSprite => TownOfUs.Sprites[TownOfUs.SpriteType.Camouflage];
+        public static Sprite CamoSprintSprite => TownOfUs.Sprites[TownOfUs.SpriteType.CamoSprint];
+        public static Sprite CamoSprintFreezeSprite => TownOfUs.Sprites[TownOfUs.SpriteType.CamoSprintFreeze];
 
         public static void Postfix(HudManager __instance)
         {

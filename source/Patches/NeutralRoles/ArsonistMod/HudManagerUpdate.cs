@@ -10,7 +10,7 @@ namespace TownOfUs.NeutralRoles.ArsonistMod
     [HarmonyPatch(typeof(HudManager), nameof(HudManager.Update))]
     public static class HudManagerUpdate
     {
-        public static Sprite IgniteSprite => TownOfUs.IgniteSprite;
+        public static Sprite IgniteSprite => TownOfUs.Sprites[TownOfUs.SpriteType.Ignite];
         
         public static void Postfix(HudManager __instance)
         {

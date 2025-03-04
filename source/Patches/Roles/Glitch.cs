@@ -18,9 +18,9 @@ namespace TownOfUs.Roles
 {
     public class Glitch : Role, IVisualAlteration
     {
-        public static Sprite MimicSprite = TownOfUs.MimicSprite;
-        public static Sprite HackSprite = TownOfUs.HackSprite;
-        public static Sprite LockSprite = TownOfUs.LockSprite;
+        public static Sprite MimicSprite = TownOfUs.Sprites[TownOfUs.SpriteType.Mimic];
+        public static Sprite HackSprite = TownOfUs.Sprites[TownOfUs.SpriteType.Hack];
+        public static Sprite LockSprite = TownOfUs.Sprites[TownOfUs.SpriteType.Lock];
 
         public Glitch(PlayerControl owner) : base(owner)
         {

@@ -17,8 +17,8 @@ namespace TownOfUs
     [HarmonyPatch(typeof(MainMenuManager), nameof(MainMenuManager.Start))]
     public class ModUpdaterButton
     {
-        private static Sprite TOUUpdateSprite => TownOfUs.UpdateTOUButton;
-        private static Sprite SubmergedUpdateSprite => TownOfUs.UpdateSubmergedButton;
+        private static Sprite TOUUpdateSprite => TownOfUs.Sprites[TownOfUs.SpriteType.UpdateToUButton];
+        private static Sprite SubmergedUpdateSprite => TownOfUs.Sprites[TownOfUs.SpriteType.UpdateSubmergedButton];
         private static void Prefix(MainMenuManager __instance)
         {
             //Check if there's a ToU update

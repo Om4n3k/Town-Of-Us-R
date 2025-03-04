@@ -48,7 +48,7 @@ namespace TownOfUs.CrewmateRoles.DetectiveMod
             bloodSplat.transform.position = location;
             bloodSplat.layer = LayerMask.NameToLayer("Players");
             SpriteRenderer render = bloodSplat.AddComponent<SpriteRenderer>();
-            render.sprite = TownOfUs.CrimeSceneSprite;
+            render.sprite = TownOfUs.Sprites[TownOfUs.SpriteType.CrimeScene];
             Vector3 scale = render.transform.localScale;
             scale.x *= 0.5f;
             scale.y *= 0.5f;

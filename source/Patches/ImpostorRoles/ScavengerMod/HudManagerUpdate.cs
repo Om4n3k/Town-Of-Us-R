@@ -12,7 +12,7 @@ namespace TownOfUs.ImpostorRoles.ScavengerMod
     [HarmonyPatch(typeof(HudManager), nameof(HudManager.Update))]
     public class HudManagerUpdate
     {
-        public static Sprite Sprite => TownOfUs.Arrow;
+        public static Sprite Sprite => TownOfUs.Sprites[TownOfUs.SpriteType.Arrow];
         public static void Postfix(HudManager __instance)
         {
             if (PlayerControl.AllPlayerControls.Count <= 1) return;

@@ -24,7 +24,7 @@ namespace TownOfUs.ImpostorRoles.TraitorMod
     public class SetTraitor
     {
         public static PlayerControl WillBeTraitor;
-        public static Sprite Sprite => TownOfUs.Arrow;
+        public static Sprite Sprite => TownOfUs.Sprites[TownOfUs.SpriteType.Arrow];
 
         public static void ExileControllerPostfix(ExileController __instance)
         {

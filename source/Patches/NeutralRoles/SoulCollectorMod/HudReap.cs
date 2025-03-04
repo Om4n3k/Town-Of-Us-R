@@ -11,7 +11,7 @@ namespace TownOfUs.NeutralRoles.SoulCollectorMod
     [HarmonyPatch(typeof(HudManager))]
     public class HudReap
     {
-        public static Sprite ReapSprite => TownOfUs.ReapSprite;
+        public static Sprite ReapSprite => TownOfUs.Sprites[TownOfUs.SpriteType.Reap];
 
         [HarmonyPatch(nameof(HudManager.Update))]
         public static void Postfix(HudManager __instance)

@@ -43,7 +43,7 @@ namespace TownOfUs.CrewmateRoles.ImitatorMod
             if (obj.name?.Contains("ExileCutscene") == true) ExileControllerPostfix(ExileControllerPatch.lastExiled);
         }
 
-        public static Sprite Sprite => TownOfUs.Arrow;
+        public static Sprite Sprite => TownOfUs.Sprites[TownOfUs.SpriteType.Arrow];
 
         public static void Imitate(Imitator imitator)
         {

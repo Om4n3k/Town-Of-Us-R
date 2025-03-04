@@ -17,7 +17,7 @@ namespace TownOfUs.CrewmateRoles.AltruistMod
     public class Coroutine
     {
         public static Dictionary<PlayerControl, ArrowBehaviour> Revived = new();
-        public static Sprite Sprite => TownOfUs.Arrow;
+        public static Sprite Sprite => TownOfUs.Sprites[TownOfUs.SpriteType.Arrow];
 
         public static IEnumerator AltruistRevive(DeadBody target, Altruist role)
         {

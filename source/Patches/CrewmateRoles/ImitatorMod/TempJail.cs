@@ -8,7 +8,7 @@ namespace TownOfUs.CrewmateRoles.ImitatorMod
 {
     public class TempJail
     {
-        public static Sprite CellSprite => TownOfUs.InJailSprite;
+        public static Sprite CellSprite => TownOfUs.Sprites[TownOfUs.SpriteType.InJail];
 
         public static void GenCell(Imitator role, PlayerVoteArea voteArea)
         {

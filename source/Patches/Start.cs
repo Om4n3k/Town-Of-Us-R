@@ -13,7 +13,7 @@ namespace TownOfUs.Patches
     [HarmonyPatch(typeof(IntroCutscene._CoBegin_d__35), nameof(IntroCutscene._CoBegin_d__35.MoveNext))]
     public static class Start
     {
-        public static Sprite Sprite => TownOfUs.Arrow;
+        public static Sprite Sprite => TownOfUs.Sprites[TownOfUs.SpriteType.Arrow];
         public static void Postfix(IntroCutscene._CoBegin_d__35 __instance)
         {
             foreach (var player in PlayerControl.AllPlayerControls)

@@ -121,7 +121,8 @@ namespace TownOfUs.Roles.Modifiers
                 {
                     Utils.Rpc(CustomRPC.Morph, PlayerControl.LocalPlayer.PlayerId, corpse.PlayerId);
                     morphling.TimeRemaining = CustomGameOptions.MorphlingDuration;
-                    if (morphling.SampledPlayer == null) morphling._morphButton.graphic.sprite = TownOfUs.MorphSprite;
+                    if (morphling.SampledPlayer == null)
+                        morphling._morphButton.graphic.sprite = TownOfUs.Sprites[TownOfUs.SpriteType.Morph];
                     morphling.SampledPlayer = corpse;
                     morphling.MorphedPlayer = corpse;
                     Utils.Morph(morphling.Player, corpse);
@@ -166,7 +167,7 @@ namespace TownOfUs.Roles.Modifiers
                 Utils.Rpc(CustomRPC.Drag, PlayerControl.LocalPlayer.PlayerId, db.ParentId);
                 undertaker.CurrentlyDragging = db;
                 ImpostorRoles.UndertakerMod.KillButtonTarget.SetTarget(undertaker._dragDropButton, null, undertaker);
-                undertaker._dragDropButton.graphic.sprite = TownOfUs.DropSprite;
+                undertaker._dragDropButton.graphic.sprite = TownOfUs.Sprites[TownOfUs.SpriteType.Drop];
 
             }
             else if (role is Venerer venerer)
@@ -185,7 +186,7 @@ namespace TownOfUs.Roles.Modifiers
                 var pos = PlayerControl.LocalPlayer.transform.position;
                 pos.z += 0.001f;
                 bomber.DetonatePoint = pos;
-                bomber.PlantButton.graphic.sprite = TownOfUs.DetonateSprite;
+                bomber.PlantButton.graphic.sprite = TownOfUs.Sprites[TownOfUs.SpriteType.Detonate];
                 bomber.TimeRemaining = CustomGameOptions.DetonateDelay;
                 bomber.PlantButton.SetCoolDown(bomber.TimeRemaining, CustomGameOptions.DetonateDelay);
                 if (PlayerControl.LocalPlayer.Is(ModifierEnum.Underdog))

@@ -11,7 +11,7 @@ namespace TownOfUs.Roles
 
         public Dictionary<byte, ArrowBehaviour> MediatedPlayers = new Dictionary<byte, ArrowBehaviour>();
         
-        public static Sprite Arrow => TownOfUs.Arrow;
+        public static Sprite Arrow => TownOfUs.Sprites[TownOfUs.SpriteType.Arrow];
         
         public Medium(PlayerControl player) : base(player)
         {

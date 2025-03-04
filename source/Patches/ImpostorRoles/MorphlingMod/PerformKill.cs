@@ -8,8 +8,8 @@ namespace TownOfUs.ImpostorRoles.MorphlingMod
     [HarmonyPatch(typeof(KillButton), nameof(KillButton.DoClick))]
     public class PerformKill
     {
-        public static Sprite SampleSprite => TownOfUs.SampleSprite;
-        public static Sprite MorphSprite => TownOfUs.MorphSprite;
+        public static Sprite SampleSprite => TownOfUs.Sprites[TownOfUs.SpriteType.Sample];
+        public static Sprite MorphSprite => TownOfUs.Sprites[TownOfUs.SpriteType.Morph];
 
         public static bool Prefix(KillButton __instance)
         {

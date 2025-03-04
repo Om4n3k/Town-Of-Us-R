@@ -270,7 +270,7 @@ namespace TownOfUs.NeutralRoles.DoomsayerMod
                     var button = swapper.Buttons[index];
                     if (button != null)
                     {
-                        if (button.GetComponent<SpriteRenderer>().sprite == TownOfUs.SwapperSwitch)
+                        if (button.GetComponent<SpriteRenderer>().sprite == TownOfUs.Sprites[TownOfUs.SpriteType.SwapperSwitch])
                         {
                             swapper.ListOfActives[index] = (swapper.ListOfActives[index].Item1, false);
                             if (SwapVotes.Swap1 == voteArea) SwapVotes.Swap1 = null;

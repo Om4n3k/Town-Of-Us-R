@@ -10,8 +10,8 @@ namespace TownOfUs.CrewmateRoles.ImitatorMod
     public class AddButtonImitator
     {
         private static int _mostRecentId;
-        private static Sprite ActiveSprite => TownOfUs.ImitateSelectSprite;
-        public static Sprite DisabledSprite => TownOfUs.ImitateDeselectSprite;
+        private static Sprite ActiveSprite => TownOfUs.Sprites[TownOfUs.SpriteType.ImitateSelect];
+        public static Sprite DisabledSprite => TownOfUs.Sprites[TownOfUs.SpriteType.ImitateDeselect];
 
         private static bool IsExempt(PlayerVoteArea voteArea)
         {

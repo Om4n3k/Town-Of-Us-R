@@ -10,7 +10,7 @@ namespace TownOfUs.ImpostorRoles.HypnotistMod
     [HarmonyPatch(typeof(HudManager), nameof(HudManager.Update))]
     public class HudManagerUpdate
     {
-        public static Sprite Hypnotise => TownOfUs.HypnotiseSprite;
+        public static Sprite Hypnotise => TownOfUs.Sprites[TownOfUs.SpriteType.Hypnotise];
 
         public static void Postfix(HudManager __instance)
         {

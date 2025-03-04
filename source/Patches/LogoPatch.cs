@@ -6,7 +6,7 @@ namespace TownOfUs
     [HarmonyPatch(typeof(MainMenuManager), nameof(MainMenuManager.Start))]
     public static class LogoPatch
     {
-        private static Sprite Sprite => TownOfUs.ToUBanner;
+        private static Sprite Sprite => TownOfUs.Sprites[TownOfUs.SpriteType.TownOfUsBanner];
         static void Postfix(PingTracker __instance)
         {
             var touLogo = new GameObject("bannerLogo_TownOfUs");

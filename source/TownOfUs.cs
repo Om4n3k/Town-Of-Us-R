@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using BepInEx;
 using BepInEx.Configuration;
@@ -36,88 +37,25 @@ namespace TownOfUs
 
         public static AssetLoader bundledAssets;
 
-        public static Sprite JanitorClean;
-        public static Sprite EngineerFix;
-        public static Sprite SwapperSwitch;
-        public static Sprite SwapperSwitchDisabled;
-        public static Sprite Footprint;
-        public static Sprite MedicSprite;
-        public static Sprite SeerSprite;
-        public static Sprite SampleSprite;
-        public static Sprite MorphSprite;
-        public static Sprite Arrow;
-        public static Sprite MineSprite;
-        public static Sprite SwoopSprite;
-        public static Sprite DouseSprite;
-        public static Sprite IgniteSprite;
-        public static Sprite ReviveSprite;
-        public static Sprite ButtonSprite;
-        public static Sprite DisperseSprite;
-        public static Sprite CycleBackSprite;
-        public static Sprite CycleForwardSprite;
-        public static Sprite GuessSprite;
-        public static Sprite DragSprite;
-        public static Sprite DropSprite;
-        public static Sprite FlashSprite;
-        public static Sprite AlertSprite;
-        public static Sprite RememberSprite;
-        public static Sprite TrackSprite;
-        public static Sprite PlantSprite;
-        public static Sprite DetonateSprite;
-        public static Sprite TransportSprite;
-        public static Sprite MediateSprite;
-        public static Sprite VestSprite;
-        public static Sprite ProtectSprite;
-        public static Sprite BlackmailSprite;
-        public static Sprite BlackmailLetterSprite;
-        public static Sprite BlackmailOverlaySprite;
-        public static Sprite LighterSprite;
-        public static Sprite DarkerSprite;
-        public static Sprite InfectSprite;
-        public static Sprite RampageSprite;
-        public static Sprite TrapSprite;
-        public static Sprite InspectSprite;
-        public static Sprite ExamineSprite;
-        public static Sprite EscapeSprite;
-        public static Sprite MarkSprite;
-        public static Sprite ImitateSelectSprite;
-        public static Sprite ImitateDeselectSprite;
-        public static Sprite ObserveSprite;
-        public static Sprite BiteSprite;
-        public static Sprite RevealSprite;
-        public static Sprite ConfessSprite;
-        public static Sprite NoAbilitySprite;
-        public static Sprite CamouflageSprite;
-        public static Sprite CamoSprintSprite;
-        public static Sprite CamoSprintFreezeSprite;
-        public static Sprite HackSprite;
-        public static Sprite MimicSprite;
-        public static Sprite LockSprite;
-        public static Sprite StalkSprite;
-        public static Sprite CrimeSceneSprite;
-        public static Sprite CampaignSprite;
-        public static Sprite FortifySprite;
-        public static Sprite HypnotiseSprite;
-        public static Sprite HysteriaSprite;
-        public static Sprite JailSprite;
-        public static Sprite InJailSprite;
-        public static Sprite ExecuteSprite;
-        public static Sprite CollectSprite;
-        public static Sprite ReapSprite;
-        public static Sprite SoulSprite;
-        public static Sprite WatchSprite;
-        public static Sprite CampSprite;
-        public static Sprite ShootSprite;
-        public static Sprite RewindSprite;
-
-        public static Sprite ToUBanner;
-        public static Sprite UpdateTOUButton;
-        public static Sprite UpdateSubmergedButton;
-
-        public static Sprite ZoomPlusButton;
-        public static Sprite ZoomMinusButton;
-        public static Sprite ZoomPlusActiveButton;
-        public static Sprite ZoomMinusActiveButton;
+        public enum SpriteType
+        {
+            Janitor, Engineer, SwapperSwitch, SwapperSwitchDisabled, Footprint,
+            Medic, Seer, Sample, Morph, Arrow, Mine, Swoop, Douse,
+            Ignite, Revive, Button, Disperse, Drag, Drop, CycleBack,
+            CycleForward, Guess, Flash, Alert, Remember, Track, Plant,
+            Detonate, Transport, Mediate, Vest, Protect, Blackmail,
+            BlackmailLetter, BlackmailOverlay, Lighter, Darker, Infect,
+            Rampage, Trap, Inspect, Examine, Recall, Mark,
+            ImitateSelect, ImitateDeselect, Observe, Bite, Reveal,
+            Confess, NoAbility, Camouflage, CamoSprint, CamoSprintFreeze,
+            Hack, Mimic, Lock, Stalk, CrimeScene, Campaign, Fortify,
+            Hypnotise, Hysteria, Jail, InJail, Execute, Collect,
+            Reap, Soul, Watch, Camp, Shoot, Rewind,
+            TownOfUsBanner, UpdateToUButton, UpdateSubmergedButton,
+            Plus, Minus, PlusActive, MinusActive
+        }
+        
+        public static Dictionary<SpriteType,Sprite> Sprites = new ();
 
         public static Vector3 ButtonPosition { get; private set; } = new Vector3(2.6f, 0.7f, -9f);
 
@@ -143,89 +81,11 @@ namespace TownOfUs
 
             bundledAssets = new();
 
-            JanitorClean = CreateSprite("TownOfUs.Resources.Janitor.png");
-            EngineerFix = CreateSprite("TownOfUs.Resources.Engineer.png");
-            SwapperSwitch = CreateSprite("TownOfUs.Resources.SwapperSwitch.png");
-            SwapperSwitchDisabled = CreateSprite("TownOfUs.Resources.SwapperSwitchDisabled.png");
-            Footprint = CreateSprite("TownOfUs.Resources.Footprint.png");
-            MedicSprite = CreateSprite("TownOfUs.Resources.Medic.png");
-            SeerSprite = CreateSprite("TownOfUs.Resources.Seer.png");
-            SampleSprite = CreateSprite("TownOfUs.Resources.Sample.png");
-            MorphSprite = CreateSprite("TownOfUs.Resources.Morph.png");
-            Arrow = CreateSprite("TownOfUs.Resources.Arrow.png");
-            MineSprite = CreateSprite("TownOfUs.Resources.Mine.png");
-            SwoopSprite = CreateSprite("TownOfUs.Resources.Swoop.png");
-            DouseSprite = CreateSprite("TownOfUs.Resources.Douse.png");
-            IgniteSprite = CreateSprite("TownOfUs.Resources.Ignite.png");
-            ReviveSprite = CreateSprite("TownOfUs.Resources.Revive.png");
-            ButtonSprite = CreateSprite("TownOfUs.Resources.Button.png");
-            DisperseSprite = CreateSprite("TownOfUs.Resources.Disperse.png");
-            DragSprite = CreateSprite("TownOfUs.Resources.Drag.png");
-            DropSprite = CreateSprite("TownOfUs.Resources.Drop.png");
-            CycleBackSprite = CreateSprite("TownOfUs.Resources.CycleBack.png");
-            CycleForwardSprite = CreateSprite("TownOfUs.Resources.CycleForward.png");
-            GuessSprite = CreateSprite("TownOfUs.Resources.Guess.png");
-            FlashSprite = CreateSprite("TownOfUs.Resources.Flash.png");
-            AlertSprite = CreateSprite("TownOfUs.Resources.Alert.png");
-            RememberSprite = CreateSprite("TownOfUs.Resources.Remember.png");
-            TrackSprite = CreateSprite("TownOfUs.Resources.Track.png");
-            PlantSprite = CreateSprite("TownOfUs.Resources.Plant.png");
-            DetonateSprite = CreateSprite("TownOfUs.Resources.Detonate.png");
-            TransportSprite = CreateSprite("TownOfUs.Resources.Transport.png");
-            MediateSprite = CreateSprite("TownOfUs.Resources.Mediate.png");
-            VestSprite = CreateSprite("TownOfUs.Resources.Vest.png");
-            ProtectSprite = CreateSprite("TownOfUs.Resources.Protect.png");
-            BlackmailSprite = CreateSprite("TownOfUs.Resources.Blackmail.png");
-            BlackmailLetterSprite = CreateSprite("TownOfUs.Resources.BlackmailLetter.png");
-            BlackmailOverlaySprite = CreateSprite("TownOfUs.Resources.BlackmailOverlay.png");
-            LighterSprite = CreateSprite("TownOfUs.Resources.Lighter.png");
-            DarkerSprite = CreateSprite("TownOfUs.Resources.Darker.png");
-            InfectSprite = CreateSprite("TownOfUs.Resources.Infect.png");
-            RampageSprite = CreateSprite("TownOfUs.Resources.Rampage.png");
-            TrapSprite = CreateSprite("TownOfUs.Resources.Trap.png");
-            InspectSprite = CreateSprite("TownOfUs.Resources.Inspect.png");
-            ExamineSprite = CreateSprite("TownOfUs.Resources.Examine.png");
-            EscapeSprite = CreateSprite("TownOfUs.Resources.Recall.png");
-            MarkSprite = CreateSprite("TownOfUs.Resources.Mark.png");
-            ImitateSelectSprite = CreateSprite("TownOfUs.Resources.ImitateSelect.png");
-            ImitateDeselectSprite = CreateSprite("TownOfUs.Resources.ImitateDeselect.png");
-            ObserveSprite = CreateSprite("TownOfUs.Resources.Observe.png");
-            BiteSprite = CreateSprite("TownOfUs.Resources.Bite.png");
-            RevealSprite = CreateSprite("TownOfUs.Resources.Reveal.png");
-            ConfessSprite = CreateSprite("TownOfUs.Resources.Confess.png");
-            NoAbilitySprite = CreateSprite("TownOfUs.Resources.NoAbility.png");
-            CamouflageSprite = CreateSprite("TownOfUs.Resources.Camouflage.png");
-            CamoSprintSprite = CreateSprite("TownOfUs.Resources.CamoSprint.png");
-            CamoSprintFreezeSprite = CreateSprite("TownOfUs.Resources.CamoSprintFreeze.png");
-            HackSprite = CreateSprite("TownOfUs.Resources.Hack.png");
-            MimicSprite = CreateSprite("TownOfUs.Resources.Mimic.png");
-            LockSprite = CreateSprite("TownOfUs.Resources.Lock.png");
-            StalkSprite = CreateSprite("TownOfUs.Resources.Stalk.png");
-            CrimeSceneSprite = CreateSprite("TownOfUs.Resources.CrimeScene.png");
-            CampaignSprite = CreateSprite("TownOfUs.Resources.Campaign.png");
-            FortifySprite = CreateSprite("TownOfUs.Resources.Fortify.png");
-            HypnotiseSprite = CreateSprite("TownOfUs.Resources.Hypnotise.png");
-            HysteriaSprite = CreateSprite("TownOfUs.Resources.Hysteria.png");
-            JailSprite = CreateSprite("TownOfUs.Resources.Jail.png");
-            InJailSprite = CreateSprite("TownOfUs.Resources.InJail.png");
-            ExecuteSprite = CreateSprite("TownOfUs.Resources.Execute.png");
-            CollectSprite = CreateSprite("TownOfUs.Resources.Collect.png");
-            ReapSprite = CreateSprite("TownOfUs.Resources.Reap.png");
-            SoulSprite = CreateSprite("TownOfUs.Resources.Soul.png");
-            WatchSprite = CreateSprite("TownOfUs.Resources.Watch.png");
-            CampSprite = CreateSprite("TownOfUs.Resources.Camp.png");
-            ShootSprite = CreateSprite("TownOfUs.Resources.Shoot.png");
-            RewindSprite = CreateSprite("TownOfUs.Resources.Rewind.png");
-
-            ToUBanner = CreateSprite("TownOfUs.Resources.TownOfUsBanner.png");
-            UpdateTOUButton = CreateSprite("TownOfUs.Resources.UpdateToUButton.png");
-            UpdateSubmergedButton = CreateSprite("TownOfUs.Resources.UpdateSubmergedButton.png");
-
-            ZoomPlusButton = CreateSprite("TownOfUs.Resources.Plus.png");
-            ZoomMinusButton = CreateSprite("TownOfUs.Resources.Minus.png");
-            ZoomPlusActiveButton = CreateSprite("TownOfUs.Resources.PlusActive.png");
-            ZoomMinusActiveButton = CreateSprite("TownOfUs.Resources.MinusActive.png");
-
+            foreach (SpriteType spriteType in Enum.GetValues(typeof(SpriteType)))
+            {
+                Sprites[spriteType] = CreateSprite($"TownOfUs.Resources.{spriteType}.png");
+            }
+            
             PalettePatch.Load();
             ClassInjector.RegisterTypeInIl2Cpp<RainbowBehaviour>();
             ClassInjector.RegisterTypeInIl2Cpp<CrimeScene>();

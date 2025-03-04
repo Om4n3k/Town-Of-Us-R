@@ -10,7 +10,7 @@ namespace TownOfUs.Roles
     public class Aurial : Role
     {
         public Dictionary<(Vector3, int), ArrowBehaviour> SenseArrows = new Dictionary<(Vector3, int), ArrowBehaviour>();
-        public static Sprite Sprite => TownOfUs.Arrow;
+        public static Sprite Sprite => TownOfUs.Sprites[TownOfUs.SpriteType.Arrow];
         public Aurial(PlayerControl player) : base(player)
         {
             Name = "Aurial";

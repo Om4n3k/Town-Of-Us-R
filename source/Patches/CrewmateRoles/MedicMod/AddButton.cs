@@ -12,8 +12,8 @@ namespace TownOfUs.CrewmateRoles.MedicMod
     [HarmonyPatch(typeof(MeetingHud), nameof(MeetingHud.Start))]
     public class AddButton
     {
-        private static Sprite LighterSprite => TownOfUs.LighterSprite;
-        public static Sprite DarkerSprite => TownOfUs.DarkerSprite;
+        private static Sprite LighterSprite => TownOfUs.Sprites[TownOfUs.SpriteType.Lighter];
+        public static Sprite DarkerSprite => TownOfUs.Sprites[TownOfUs.SpriteType.Darker];
 
         private static bool IsExempt(PlayerVoteArea voteArea)
         {

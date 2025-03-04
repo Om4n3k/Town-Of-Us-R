@@ -14,7 +14,7 @@ namespace TownOfUs.CrewmateRoles.MayorMod
 {
     public class AddRevealButton
     {
-        public static Sprite RevealSprite => TownOfUs.RevealSprite;
+        public static Sprite RevealSprite => TownOfUs.Sprites[TownOfUs.SpriteType.Reveal];
 
         public static void GenButton(Mayor role, int index)
         {

@@ -20,7 +20,7 @@ namespace TownOfUs.ImpostorRoles.BlackmailerMod
         [HarmonyPatch(typeof(MeetingHud), nameof(MeetingHud.Start))]
         public class MeetingHudStart
         {
-            public static Sprite Letter => TownOfUs.BlackmailLetterSprite;
+            public static Sprite Letter => TownOfUs.Sprites[TownOfUs.SpriteType.BlackmailLetter];
 
             public static void Postfix(MeetingHud __instance)
             {
@@ -73,7 +73,7 @@ namespace TownOfUs.ImpostorRoles.BlackmailerMod
         [HarmonyPatch(typeof(MeetingHud), nameof(MeetingHud.Update))]
         public class MeetingHud_Update
         {
-            public static Sprite Overlay => TownOfUs.BlackmailOverlaySprite;
+            public static Sprite Overlay => TownOfUs.Sprites[TownOfUs.SpriteType.BlackmailOverlay];
 
             public static void Postfix(MeetingHud __instance)
             {

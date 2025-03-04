@@ -13,10 +13,10 @@ namespace TownOfUs.CrewmateRoles.VigilanteMod
 {
     public class AddButtonVigi
     {
-        private static Sprite CycleBackSprite => TownOfUs.CycleBackSprite;
-        private static Sprite CycleForwardSprite => TownOfUs.CycleForwardSprite;
+        private static Sprite CycleBackSprite => TownOfUs.Sprites[TownOfUs.SpriteType.CycleBack];
+        private static Sprite CycleForwardSprite => TownOfUs.Sprites[TownOfUs.SpriteType.CycleForward];
 
-        private static Sprite GuessSprite => TownOfUs.GuessSprite;
+        private static Sprite GuessSprite => TownOfUs.Sprites[TownOfUs.SpriteType.Guess];
 
         private static bool IsExempt(PlayerVoteArea voteArea)
         {

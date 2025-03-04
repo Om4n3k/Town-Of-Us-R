@@ -7,8 +7,8 @@ namespace TownOfUs.ImpostorRoles.BomberMod
     [HarmonyPatch(typeof(HudManager), nameof(HudManager.Update))]
     public class HudManagerUpdate
     {
-        public static Sprite PlantSprite => TownOfUs.PlantSprite;
-        public static Sprite DetonateSprite => TownOfUs.DetonateSprite;
+        public static Sprite PlantSprite => TownOfUs.Sprites[TownOfUs.SpriteType.Plant];
+        public static Sprite DetonateSprite => TownOfUs.Sprites[TownOfUs.SpriteType.Detonate];
 
         [HarmonyPriority(Priority.Last)]
         public static void Postfix(HudManager __instance)

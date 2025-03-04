@@ -8,8 +8,8 @@ namespace TownOfUs.ImpostorRoles.BomberMod
     [HarmonyPatch(typeof(KillButton), nameof(KillButton.DoClick))]
     public class Plant
     {
-        public static Sprite PlantSprite => TownOfUs.PlantSprite;
-        public static Sprite DetonateSprite => TownOfUs.DetonateSprite;
+        public static Sprite PlantSprite => TownOfUs.Sprites[TownOfUs.SpriteType.Plant];
+        public static Sprite DetonateSprite => TownOfUs.Sprites[TownOfUs.SpriteType.Detonate];
         public static bool Prefix(KillButton __instance)
         {
             var flag = PlayerControl.LocalPlayer.Is(RoleEnum.Bomber);

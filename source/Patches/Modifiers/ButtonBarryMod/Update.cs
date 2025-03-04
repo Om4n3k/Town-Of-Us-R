@@ -8,7 +8,7 @@ namespace TownOfUs.Modifiers.ButtonBarryMod
     [HarmonyPatch(typeof(HudManager), nameof(HudManager.Update))]
     public class Update
     {
-        public static Sprite Button => TownOfUs.ButtonSprite;
+        public static Sprite Button => TownOfUs.Sprites[TownOfUs.SpriteType.Button];
 
         public static void Postfix(HudManager __instance)
         {

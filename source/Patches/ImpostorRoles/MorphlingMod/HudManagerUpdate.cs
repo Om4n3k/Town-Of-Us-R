@@ -7,8 +7,8 @@ namespace TownOfUs.ImpostorRoles.MorphlingMod
     [HarmonyPatch(typeof(HudManager), nameof(HudManager.Update))]
     public class HudManagerUpdate
     {
-        public static Sprite SampleSprite => TownOfUs.SampleSprite;
-        public static Sprite MorphSprite => TownOfUs.MorphSprite;
+        public static Sprite SampleSprite => TownOfUs.Sprites[TownOfUs.SpriteType.Sample];
+        public static Sprite MorphSprite => TownOfUs.Sprites[TownOfUs.SpriteType.Morph];
 
 
         public static void Postfix(HudManager __instance)
